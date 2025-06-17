@@ -1,1 +1,14 @@
-Flow chart
+# Lab Documentation
+
+## Flow chart:
+![Image](https://github.com/user-attachments/assets/5a3fa86b-d03d-49ea-a82d-b1de08177597)
+
+## Challenges of the lab:
+- Trying to find what to do
+
+## Encryption
+Can as the encrytion message and NOT as the encryption key, turn Can into binary: 67 97 110 and Not into binary 78 79 84
+bitwise operation becomes 9 46 70, also the hex form for the message is  0x43 0x61 0x6E.
+
+## Decryption
+Use the key to reverse the operation and get back the binary encrytion message, then covert back to text.
