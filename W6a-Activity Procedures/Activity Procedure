@@ -1,0 +1,4 @@
+# Generate English uppercase characters from A to Z. After every character, there must be a line feed. 
+# Use procedures and loops to optimize the code. Do not use gdb debugger. The executable file will run directly on the terminal.
+
+## There was not much difficulty in this assignment as it is just incrementing with a loop.
