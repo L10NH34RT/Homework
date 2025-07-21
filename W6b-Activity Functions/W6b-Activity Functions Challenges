@@ -1,0 +1,4 @@
+# Assign a number to a register or a variable, pass a number to the function and display the result, 'odd' or 'even'. The result should be displayed on the console. 
+# The function should check whether the number is an even or an odd number.
+
+## See if a number can be divided by 2 whole, if so even, if not odd, using the number 42 to test it in my code.
