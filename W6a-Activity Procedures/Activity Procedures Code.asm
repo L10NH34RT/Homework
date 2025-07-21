@@ -1,61 +1,50 @@
 section .data
-    newline db 10, 0    ; newline character
+    newline db 10, 0    
 
 section .text
     global _start
 
 _start:
-    mov al, 'A'         ; start with character 'A'
+    mov al, 'A'         
     
 print_loop:
-    ; Print the current character
     call print_char
     
-    ; Print newline
     call print_newline
     
-    ; Increment to next character
     inc al
     
-    ; Check if we've reached 'Z' + 1
     cmp al, 'Z' + 1
-    jne print_loop      ; if not equal, continue loop
+    jne print_loop     
     
-    ; Exit program
-    mov eax, 1          ; sys_exit
-    mov ebx, 0          ; exit status
+    mov eax, 1          
+    mov ebx, 0         
     int 0x80
 
 print_char:
-    ; Save the character on stack temporarily
     push eax
     
-    ; Prepare for sys_write
-    mov eax, 4          ; sys_write
-    mov ebx, 1          ; stdout
-    mov ecx, esp        ; pointer to character on stack
-    mov edx, 1          ; write 1 byte
+    mov eax, 4          
+    mov ebx, 1          
+    mov ecx, esp        
+    mov edx, 1          
     int 0x80
     
-    ; Restore stack
     pop eax
     ret
 
 print_newline:
-    ; Save registers
     push eax
     push ebx
     push ecx
     push edx
     
-    ; Print newline
-    mov eax, 4          ; sys_write
-    mov ebx, 1          ; stdout
-    mov ecx, newline    ; pointer to newline
-    mov edx, 1          ; write 1 byte
+    mov eax, 4          
+    mov ebx, 1         
+    mov ecx, newline    
+    mov edx, 1          
     int 0x80
     
-    ; Restore registers
     pop edx
     pop ecx
     pop ebx
